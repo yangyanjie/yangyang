@@ -1,0 +1,21 @@
+{
+    "ok": true,
+     "awardType": 0,
+     "region":"河北石家庄",
+     "heshiCoin":25,
+	 "winningList":[{ 
+        "awardName":"一等奖",
+        "awardUser":"张三"
+    },
+    {
+        "awardName":"一等奖",
+        "awardUser":"李四"
+    },
+    {
+        "awardName":"三等奖",
+        "awardUser":"小屋"
+    }
+],
+    "errorCode": 0,
+    "msg": null
+}

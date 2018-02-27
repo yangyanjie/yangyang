@@ -1,0 +1,63 @@
+{"ok": true,
+    "winningTime":"2018-01-03期",
+"data":[
+    {
+    "region":"河北石家庄",
+"awardName":"一等奖",
+   "awardUser":"张三"
+},
+{ 
+"region":"河北石家庄",
+"awardName":"二等奖",
+"awardUser":"李四"
+},
+{ 
+"region":"河北石家庄",
+"awardName":"三等奖",
+"awardUser":"小五"
+},
+{ "region":"湖南长沙",
+"awardName":"一等奖",
+   "awardUser":"张三"
+},
+{ 
+"region":"湖南长沙",
+"awardName":"二等奖",
+"awardUser":"李四"
+},
+{ 
+"region":"湖南长沙",
+"awardName":"三等奖",
+"awardUser":"小五"
+},
+{ "region":"河北长沙",
+    "awardName":"一等奖",
+       "awardUser":"张三"
+    },
+    { 
+    "region":"河北长沙",
+    "awardName":"二等奖",
+    "awardUser":"李四"
+    },
+    { 
+    "region":"河北长沙",
+    "awardName":"三等奖",
+    "awardUser":"小五"
+    },
+    { "region":"郑州长沙",
+        "awardName":"一等奖",
+           "awardUser":"张三"
+        },
+        { 
+        "region":"郑州长沙",
+        "awardName":"二等奖",
+        "awardUser":"李四"
+        },
+        { 
+        "region":"郑州长沙",
+        "awardName":"三等奖",
+        "awardUser":"小五"
+        }
+]
+}
+  
