@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>钻石燃情兆丰年，元旦喜降红包雪</title>
+    <link rel="stylesheet" type="text/css" href="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/css/hongbaoxue.css?v=1.0.0"></link>
+    <script>
+        //rem转换
+        function rem() {
+            var w = Math.min(document.documentElement.getBoundingClientRect().width, 500);
+            document.getElementsByTagName('html')[0].style.fontSize = w * 100 / 375 + 'px';
+        }
+        rem();
+        window.onresize = function(){rem();};
+    </script>
+    <style type="text/css">
+        /**不需要显示的暂时隐藏掉*/
+        .ui-hide {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="index">
+    <!--埋点-->
+    <div id="statistics" class="hidden" data-pageid="1000"></div>
+
+    <!-- 鸿运当头 -->
+    <!--<div class="hydt">
+        <div class="hydt-moon"></div>
+        <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/he.gif" />
+    </div>-->
+
+    <!-- 倒计时 -->
+    <div class="comming">
+        <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/bg-run.png" />
+
+        <!-- 倒计时 -->
+        <div class="countdown">
+            <p class="three-seconds">
+                <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/5.png" id="show_5">
+                <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/4.png" id="show_4">
+                <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/3.png" id="show_3">
+                <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/2.png" id="show_2">
+                <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/1.png" id="show_1">
+            </p>
+            <em class="ui-hide">距活动开始仅剩</em>
+            <p class="thirty-seconds ui-hide">00:<span class="minutes">00</span>:<span class="seconds">00</span></p>
+        </div>
+    </div>
+
+    <!-- 游戏区域 -->
+    <div class="game-con">
+        <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/bg-main.png" />
+
+        <!-- 游戏红包列表 -->
+        <ul class="game-list" md='game-list' md_name='元旦红包雪，掉落红包点击次数'>
+
+        </ul>
+
+        <div class="packet">
+            <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/packet.png" alt="">
+        </div>
+
+        <!-- 红包数量 -->
+        <div class="num-con">
+            <p class="total-num">红包总量：<span>0</span></p>
+            <p class="remain-num">红包余量：<span>0</span></p>
+        </div>
+
+        <!-- 其他人获奖播报 -->
+        <div class="prized-con">
+            <div class="prized-height">
+                <div class="prized-main">
+                    <ul>
+                        <!-- <li>恭喜 <span>138******8765</span><p>获得<span>88.88</span>元红包</p></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中奖弹窗 -->
+    <div class="popup-con prize">
+        <div class="shadow"></div>
+        <div class="popup">
+            <p class="popup-title">恭喜您</p>
+            <div class="prize-show">
+                <h3 class="title">成功抓到一只红包君</h3>
+                <p class="num">红包君面额</p>
+                <em class="money">¥<span></span></em>
+                <!--<p class="prompt">请在24小时内领取</p>-->
+                <button class="btn btn-l get-btn">立即领取</button>
+            </div>
+            <!--
+            <div class="prize-get">
+                <h3>红运当头送福气^_^</h3>
+                <h3 class="title">红运唰唰唰，一路发到家！</h3>
+                <div class="btn-con">
+                    <button class="btn btn-s btn-s-l share-btn">晒好运</button>
+                    <button class="btn btn-s btn-s-r">返回</button>
+                </div>
+                <em>红包君领取成功</em>
+                <p class="prompt">30分钟內发放至微信钱包</p>
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!--公众号-->
+    <div class="ui-wxpng">
+        <div class="shadow"></div>
+        <div class="popup img-content">
+            <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/close@2x.png" class="close">
+            <p>为了能及时通知您获奖动态以及新活动动态，</p>
+            <p class="img-title">请长按以下二维码图片完成关注，</p>
+            <p>关注后奖品将发放至您的个人中心。</p>
+            <img class="png" src="https://weiopn.oss-cn-beijing.aliyuncs.com/scoremall/hbqr/qrcode.jpeg" />
+            <p class="img-bottom">长按扫描二维码，关注公众号</p>
+        </div>
+    </div>
+
+    <!-- 来晚，已发完 -->
+    <div class="popup-con late-over">
+        <div class="shadow"></div>
+        <div class="popup">
+            <p class="popup-title">提示</p>
+            <!-- 来晚 -->
+            <div class="late">
+                <h3>来晚一步</h3>
+                <h3 class="title">红包已派完</h3>
+                <div class="btn-con">
+                    <button class="btn btn-s btn-s-l share-btn">分享下一场</button>
+                    <button class="btn btn-s btn-s-r">返回</button>
+                </div>
+                <p class="prompt">01月01日下午20:00早点来哦!</p>
+            </div>
+
+            <!-- 结束 -->
+            <div class="over">
+                <h3>手慢了</h3>
+                <h3 class="title">红包已派完</h3>
+                <button class="btn btn-l btn-s-r">更多惊喜</button>
+            </div>
+        </div>
+    </div>
+
+    <!--非活动时间-->
+    <div class="ui-rule">
+        <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/bg-ann.png" />
+        <div class="btn-rule"><img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/i-arrow.png">查看活动规则</div>
+        <button type="button" id="id_showscan">扫一扫</button>
+        <button type="button" id="id_showback">返回</button>
+    </div>
+
+    <!--规则说明-->
+    <div class="pop-rule">
+        <div class="rule-content">
+            <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/pop-close.png" class="close">
+            <h3>活动规则</h3>
+            <p>1.&nbsp;&nbsp;每场钻石雨活动配置10000个钻石红包，先到先得，每位用户<span>仅限参与1次</span>。1月1日 晚20:00准点扫码最佳。</p>
+
+            <p>2.&nbsp;&nbsp;活动开始倒计时完毕后，活动页面将开始掉落钻石红包及其他元旦元素，红包金额随机，可抢到的红包面额为：1.08元、1.88元、2.88元、6.66元、8.88元、88.88元，还有机会抢到超额<span>188.88元</span>大钻石红包。</p>
+
+            <p>3.&nbsp;&nbsp;<span>1月1日晚20:00</span>准点微信“扫一扫”扫码新烟包即可参与活动。</p>
+
+            <p>4.&nbsp;&nbsp;红包领取成功则直接到账微信钱包，具体到账时间为点击领取后30分钟之内。</p>
+
+            <div>本活动为扫码验真回馈，以鼓励金的形式发放给消费者，任何第三方不得将此用作商业用途，活动最终解释权归河北中烟工业责任有限公司所有。</div>
+        </div>
+    </div>
+
+    <!-- 非规定的三种规格 -->
+    <div class="popup-con limit">
+        <div class="shadow"></div>
+        <div class="popup">
+            <p class="popup-title">提示</p>
+            <h3>抱歉，本品非本期红包雪活动产品，换个本期指定产品试试看~</h3>
+            <button class="btn btn-l btn-s-r">更多精彩</button>
+        </div>
+    </div>
+
+    <!-- 已参与过 -->
+    <div class="popup-con already">
+        <div class="shadow"></div>
+        <div class="popup">
+            <p class="popup-title">提示</p>
+            <!--还有下一场-->
+            <div class="has-next">
+                <h3>您已经参加过活动啦</h3>
+                <h3 class="title">01月01日下午18:00再约，不见不散！</h3>
+                <button class="btn btn-l btn-s-r">更多精彩</a></button>
+            </div>
+            <!--没有下一场-->
+            <div class="no-next">
+                <h3>您已经参加过活动啦</h3>
+                <button class="btn btn-l btn-s-r">更多精彩</a></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- loading -->
+    <div class="loading-con">
+        <div class="loading">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+            <div class="line5"></div>
+        </div>
+    </div>
+
+    <!-- 分享箭头 -->
+    <div class="share-arrow">
+        <img src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/img/share-arrow.png">
+    </div>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="/platform_v2/tokenjs"></script>
+<script src="https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/lib/jquery-3.0.0.min.js?v=1.0.0"></script>
+<!--埋点所用-->
+<script defer type="text/javascript">
+    var tar = document.getElementsByTagName('script');
+    tar = tar[tar.length - 1];
+    [
+        // 'https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/lib/hongbaoxue.js',
+        'https://weiopn.oss-cn-beijing.aliyuncs.com/wx_hebei/lib/statistics.js'
+    ].forEach(function (url) {
+        var hc = document.createElement('script');
+        hc.type = 'text/javascript';
+        hc.defer = true;
+        hc.src = url + '?t=' + (+new Date);
+        tar.parentNode.insertBefore(hc, tar);
+    });
+</script>
+</body>
+</html>
