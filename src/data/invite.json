@@ -1,0 +1,17 @@
+{
+    "ok": true,
+ 	 "data":[
+		{
+			"image": "http://img.com",
+			"nickName": "啦啦啦",
+			"content": "已助力",
+			"luckScore": 5
+		},
+		{
+			"image": "http://img2.com",
+			"nickName": "哈哈啊",
+			"content": "已助力",
+			"luckScore": 5
+		}
+	]
+}

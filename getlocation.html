@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <title>钻石验真服务平台</title>
+    <script src="https://weiopn.oss-cn-beijing.aliyuncs.com/common/s_mobile_responsive.js"></script>
+    <script src="https://weiopn.oss-cn-beijing.aliyuncs.com/common/s_public.js"></script>
+    <link rel="stylesheet" href="https://weiopn.oss-cn-beijing.aliyuncs.com/common/s_public.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="/platform_v2/tokenjs"></script>
+</head>
+<body style="width: 100%;height: 100%">
+<div class="loading">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<script src="https://weiopn.oss-cn-beijing.aliyuncs.com/lib/sao_2.1.4jquery.min.js"></script>
+<script type="text/javascript">
+    var Time = "";
+    var gotoUrl = s_public.getQueryString("gotoUrl");
+    var i = 0;                          //防止定位慢，调取两次dspatch请求
+    Time = setTimeout(function () {
+        //alert("setTimeout");
+        if(i === 1) return;
+        i = i + 1;
+        window.location.href = "/act_v2/dispatch?moudleKey="+gotoUrl+"&shibo=5&date=" + new Date().getTime();
+    }, 2000);
+    wx.config({
+        debug: false, //
+        appId: weixin_token.appid, // 必填，公众号的唯一标识
+        timestamp: weixin_token.timestamp, // 必填，生成签名的时间戳
+        nonceStr: weixin_token.noncestr, // 必填，生成签名的随机串
+        signature: weixin_token.signature,// 必填，签名，见附录1
+        jsApiList: [
+            'getLocation'
+        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+
+    try {
+        wx.ready(function () {
+            wx.getLocation({
+                type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                success: function (res) {
+                    if( i === 1) return;
+                    i = i + 1;
+                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                    clearTimeout(Time);
+                    //alert(latitude);
+                    window.location.href = "/act_v2/dispatch?moudleKey="+gotoUrl+"&shibo=1&lat=" + latitude + "&lon=" + longitude + "&date=" + new Date().getTime()
+                },
+                cancel: function (res) {
+                    //alert("cancel");
+                    window.location.href = "/act_v2/dispatch?moudleKey="+gotoUrl+"&shibo=2&date=" + new Date().getTime();
+                },
+                fail: function (res) {
+                   // alert("fail");
+                    window.location.href = "/act_v2/dispatch?moudleKey="+gotoUrl+"&shibo=3&date=" + new Date().getTime();
+                }
+            })
+        })
+
+    } catch (e) {
+        wx.error(function (res) {
+            clearTimeout(Time);
+            window.location.href = "/act_v2/dispatch?moudleKey="+gotoUrl+"&shibo=4&date=" + new Date().getTime();
+        })
+    }
+
+    // $("body").click(function() {
+    //     window.location.href = "/act_v2/dispatch?moudleKey="+gotoUrl+"&date=" + new Date().getTime();
+    // })
+</script>
+</body>
+</html>
